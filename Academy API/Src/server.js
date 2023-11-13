@@ -1,3 +1,7 @@
+
+const examRouter = require('./Routers/examRouter');
+const articleRouter = require('./Routers/articleRouter'); 
+
 const express = require("express");
 const mongoose=require('mongoose')
 const app = express();
@@ -19,4 +23,10 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieparser())
 app.listen(port, () => console.log("**********Here-We-Go**********"+port));
+ 
+ 
+app.use('/api', examRouter);
+app.use('/api', articleRouter);
+
+
 

@@ -1,10 +1,10 @@
 const articleService = require('../services/articleService');
 
 const articleController = {
-    createArticle: async (req, res) => {
+      createArticle: async (req, res) => {
         try {
-            const { title, category, status, date, time, content } = req.body;
-            const newArticle = await articleService.createArticle(title, category, status, date, time, content);
+            const { title, category, publishDate, content, cover } = req.body;
+            const newArticle = await articleService.createArticle(title, category, publishDate, content, cover);
             res.status(201).json(newArticle);
         } catch (err) {
             res.status(500).json({ error: err.message });

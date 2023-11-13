@@ -6,7 +6,12 @@ const articleSchema = new mongoose.Schema({
     status: String,
     date: Date,
     time: String,
-    content: String
+    content: String,
+    cover: String,
+     isPublished: {
+        type: Boolean,
+        default: false  
+    },
 });
 
 const Article = mongoose.model('Article', articleSchema);
